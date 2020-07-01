@@ -2,9 +2,9 @@
 
 ## 1 - Iniciar
 
-_Baixar o projeto
-_npm i
-_npm start
+_Baixar o projeto;
+_npm i;
+_npm start;
 
 ## Home - Fakework:
 Imitação da home da Framework (https://frwk.com.br/#home)
