@@ -3,7 +3,9 @@
 ## 1 - Iniciar
 
 _Baixar o projeto.
+
 _npm i.
+
 _npm start.
 
 ## Home - Fakework:
