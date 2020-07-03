@@ -26,76 +26,77 @@ class Posts extends Component {
         const { posts } = this.state
 
         return (
-            <div id="pagePosts">
-                <header>
-                    <Link to="/">
-                        <FiArrowLeft />
-                        <img src={logo} alt="Logo" className="logo" />
-                    </Link>
+            <div className="container-post">
+                <div id="pagePosts">
+                    <header>
+                        <Link to="/">
+                            <FiArrowLeft />
+                            <img src={logo} alt="Logo" className="logo" />
+                        </Link>
 
-                    <h1 className="Pagetitle">Posts</h1>
-                </header>
+                        <h1 className="Pagetitle">Posts</h1>
+                    </header>
 
-                <div className="search">
-                    <div className="cima">
-                        <spam>
-                            <FiArrowLeft/>
-                        </spam>
+                    <div className="search">
+                        <div className="cima">
+                            <span>
+                                <FiArrowLeft />
+                            </span>
                             <div className="lupa">
-                                <FiSearch/>
+                                <FiSearch />
                                 <input className="search-input" type="text"></input>
                             </div>
-                        <spam>
-                            <FiMoreHorizontal/>
-                        </spam>
+                            <span>
+                                <FiMoreHorizontal />
+                            </span>
+                        </div>
+                        <div className="baixo">
+                            <span className="principais">Principais</span>
+                            <span className="recentes">Mais recentes</span>
+                            <span className="pessoas">Pessoas</span>
+                            <span className="fotos">Fotos</span>
+                            <span className="videos">Vídeos</span>
+                        </div>
                     </div>
-                    <div className="baixo">
-                        <spam className="principais">Principais</spam>
-                        <spam className="recentes">Mais recentes</spam>
-                        <spam className="pessoas">Pessoas</spam>
-                        <spam className="fotos">Fotos</spam>
-                        <spam className="videos">Vídeos</spam>
-                    </div>
+
+                    <ul className="items-grid">
+                        {posts.map(post => (
+                            <li key={post.id}>
+                                <div className="space-photo">
+                                    <div className="fake-photo"><FiUser />{post.userId}</div>
+                                </div>
+                                <div className="post-area">
+                                    <div>
+                                        <span className="post-user">
+                                            <span>
+                                                Usuário maneiro{post.userId}
+                                            </span>
+                                            <span>
+                                                @User{post.userId}
+                                            </span>
+                                        </span>
+
+                                        <span className="post-title">{post.title}</span>
+                                        {post.body}
+                                    </div>
+
+
+
+                                    <div className="tt-Icons">
+                                        <span><FaRegComment /></span>
+                                        <span><AiOutlineRetweet /></span>
+                                        <span><FaRegHeart /></span>
+                                        <span><BsUpload /></span>
+                                    </div>
+                                </div>
+
+
+                            </li>
+                        ))}
+                    </ul>
+
                 </div>
-
-                <ul className="items-grid">
-                    {posts.map(post => (
-                        <li key={post.id}>
-                            <div className="space-photo">
-                                <div className="fake-photo"><FiUser />{post.userId}</div>
-                            </div>
-                            <div className="post-area">
-                                <div>
-                                    <spam className="post-user">
-                                        <spam>
-                                            Usuário maneiro{post.userId}
-                                        </spam>
-                                        <spam>
-                                            @User{post.userId}
-                                        </spam>
-                                    </spam>
-
-                                    <spam className="post-title">{post.title}</spam>
-                                    {post.body}
-                                </div>
-
-
-
-                                <div className="tt-Icons">
-                                    <spam><FaRegComment /></spam>
-                                    <spam><AiOutlineRetweet /></spam>
-                                    <spam><FaRegHeart /></spam>
-                                    <spam><BsUpload /></spam>
-                                </div>
-                            </div>
-
-
-                        </li>
-                    ))}
-                </ul>
-
             </div>
-
         )
     }
 }

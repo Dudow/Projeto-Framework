@@ -1,111 +1,51 @@
-import React, {useEffect, useState} from 'react'
+import React, { Component } from 'react'
 import api from '../../services/api'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import { FiArrowLeft } from 'react-icons/fi'
 
-// import logo from '../../assets/logo.svg'
+import logo from '../../assets/logo.png'
 
-const Todo = () => {
-    
-    const [todo, setTodo] = useState([])
+import './todo.css'
 
-    useEffect(() => {
-        api.get('todos').then(res => {
-            setTodo(res.data)
-        })
-    }, [])
+class Todo extends Component {
+    state = {
+        completed: []
+    }
 
-    console.log(todo)
+    async componentDidMount() {
+        const res = await api.get('todos?completed=true')
+        this.setState({ completed: res.data })
+    }
 
-    return(
+    render() {
 
-        <div id="page-create-point">
-            <header>
-                <Link to="/">
-                    {/* <FiArrowLeft /> */}
-                    Voltar para home
-                </Link>
-            </header>
+        const { completed } = this.state
 
-            <form>
-                <h1>Cadastro do ponto de coleta</h1>
+        return (
+            <div className="container-todo">
+                <div id="pagetodo">
+                    <header>
+                        <Link to="/">
+                            <FiArrowLeft />
+                            <img src={logo} alt="Logo" className="logo" />
+                        </Link>
+                    </header>
 
-                <fieldset>
-                    <legend>
-                        <h2>Dados</h2>
-                    </legend>
+                    <h1 className="Pagetitle">To-do</h1>
 
-                    <div className="field">
-                        <label htmlFor="name">Nome da entidade</label>
-                        <input
-                            type="text"
-                            name="name"
-                            id="name"
-                            autoComplete="off"
-                        />
-                    </div>
+                    <ul className="album-grid">
 
-                    <div className="field-group">
-                        <div className="field">
-                            <label htmlFor="email">Email</label>
-                            <input
-                                type="email"
-                                name="email"
-                                id="email"
-                                autoComplete="off"
-                                placeholder="email@email.com"
-                            />
-                        </div>
-                        <div className="field">
-                            
-                            <label htmlFor="whatsapp">Whatsapp</label>
-                            <input
-                                type="text"
-                                pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4,5}"
-                                name="whatsapp"
-                                id="whatsapp"
-                                autoComplete="off"
-                                placeholder="(00) 00000-0000"
-                            />
-                        </div>
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <legend>
-                        <h2>Endereços</h2>
-                        <span>Selecione o endereço no mapa</span>
-                    </legend>
-
-                    <div className="field-group">
-                        <div className="field">
-                            <label htmlFor="uf">Estado</label>
-                            <select name="uf" id="uf">
-                                
-                            </select>
-                        </div>
-                        <div className="field">
-                            <label htmlFor="city">Cidade</label>
-                            <select name="city" id="city">
-                            </select>
-                        </div>
-                    </div>
-                </fieldset>
-                <fieldset>
-                    <legend>
-                        <h2>Ítens de coleta</h2>
-                        <span>Selecione um ou mais ítens abaixo</span>
-                    </legend>
-
-                    <ul className="items-grid">
-                        
+                        {completed.map(todo => (
+                            <li key={todo.id}>
+                                {todo.title}
+                            </li>
+                        ))}
                     </ul>
-                </fieldset>
+                </div>
+            </div>
 
-                <button type="submit">
-                    Cadastrar ponto de coleta
-                </button>
-            </form>
-        </div>
-    )
+        )
+    }
 }
 
 export default Todo

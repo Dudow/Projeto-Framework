@@ -1,18 +1,30 @@
+.container{
+    background: #fafafa;
+    width: 100vw;
+    height: 100%;
+}
+
 #pageAlbums {
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #pageAlbums header {
     margin-top: 48px;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    align-items: left;
+    width: 100%;
 }
 
 #pageAlbums header a {
     color: var(--title-color);
+    width: 260px;
     font-weight: bold;
     text-decoration: none;
     display: flex;
@@ -22,19 +34,160 @@
 #pageAlbums header a svg {
     margin-right: 16px;
     color: black;
+    font-size: 25px;
+}
+
+.logo{
+    height: 35px;
+    position: relative;
+}
+
+.perfil{
+    height: 160px;
+    width: 100%;
+    max-width: 935px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-bottom: 45px;
+}
+
+.perfil-image{
+    height: 168px;
+    width: 168px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.perfil-photo{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    font-size: 90px;
+    background-color: #6800db;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f0f0f0;
+}
+
+.perfil-info{
+    max-width: 613px;
+    height: 160px;
+}
+
+.perfil-cima{
+    height: 30px;
+    width: 613px;
+    color: #262626;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    font-size: 28px;
+    font-weight: 300;
+}
+
+.perfil-meio{
+    height: 18px;
+    width: 613px;
+    margin-bottom: 20px;
+}
+
+.perfil-meio span{
+    margin-right: 50px;
+    color: #262626;
+    cursor: pointer;
+}
+
+.perfil-meio strong{
+    margin-right: 5px;
+    color: #262626;    
+}
+
+.perfil-baixo{
+    height: 72px;
+    width: 613px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: #262626;
+}
+
+.perfil-baixo a{
+    width: 200px;
+    color:#00376b;
+    text-decoration:none;
+}
+
+.perfil-baixo strong{
+    letter-spacing: 0.5px;
+}
+
+.histories{
+    height: 130px;
+    width: 100%;
+    max-width: 935px;
+    display: flex;
+    margin-bottom: 45px;
+    padding-left: 30px;
+}
+
+.histories-photo{
+    height: 130px;
+    width: 115px;
+    font-size: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.histories-photo div{
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.histories-photo div div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 77px;
+    width: 77px;
+    border-radius: 50%;
+    background-color: #5800d3;
+    color: #f0f0f0;
+    cursor: pointer;
+    border: 2px solid #dbdbdb;
+    
+}
+
+.histories-photo div div svg{
+    height: 65px;
+    width: 65px;
+}
+
+.histories-photo span{
+    font-size: 14px;
+    color: #262626;
+    cursor: pointer;
 }
 
 .album-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     max-width: 935px;
-    gap: 5px;
+    gap: 25px;
     list-style: none;
-    background: #efeff3;
+    background: transparent;
 }
 
 .album-grid li {
-    height: 310px;
+    height: 100%;
+    width: 100%;
     border-radius: 8px;
     padding: 1px 1px 1px;
     display: flex;
@@ -85,7 +238,29 @@
 }
 
 .imagem{
-    height: 293px;
-    width: 293px;
+    width: 100%;
     align-self: center;
+}
+
+@media(max-width: 1000px) {
+    .album-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+    }
+
+    .album-grid li {
+        height: 100%;
+        width: 100%;
+        border-radius: 8px;
+        padding: 1px 1px 1px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: left;
+    }
+}
+
+@media(max-width: 600px) {
+
 }

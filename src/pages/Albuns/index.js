@@ -1,11 +1,10 @@
 import React, { Component } from 'react'
 import api from '../../services/api'
 import { Link } from 'react-router-dom'
+import { FiArrowLeft, FiUser, FiSmile, FiWind, FiSlack } from 'react-icons/fi'
 
 import './albuns.css'
-import { FiArrowLeft } from 'react-icons/fi'
-
-// import logo from '../../assets/logo.svg'
+import logo from '../../assets/logo.png'
 
 class Albums extends Component {
     state = {
@@ -21,27 +20,104 @@ class Albums extends Component {
 
         const { photos } = this.state
 
-        console.log(photos)
-
         return (
-            <div id="pageAlbums">
-                <header>
-                    <Link to="/">
-                    <FiArrowLeft />
-                    Voltar para home
-                </Link>
-                </header>
+            <div className="container">
 
-                <h1 className="Pagetitle">Albuns</h1>
 
-                <ul className="album-grid">
-                    {photos.map(photo => (
-                        <li key={photo.id}>
-                            <img className="imagem" src={photo.url} alt={photo.title}></img>
-                        </li>
-                    ))}
-                </ul>
+                <div id="pageAlbums">
+                    <header>
+                        <Link to="/">
+                            <FiArrowLeft />
+                            <img src={logo} alt="Logo" className="logo" />
+                        </Link>
 
+                        <h1 className="Pagetitle">Albuns</h1>
+                    </header>
+
+                    <div className="perfil">
+                        <div className="perfil-image">
+                            <div className="perfil-photo"><FiUser /></div>
+                        </div>
+                        <div className="perfil-info">
+                            <div className="perfil-cima">
+                                Frameworksystem
+                        </div>
+                            <div className="perfil-meio">
+                                <span>
+                                    <strong>
+                                        305
+                                </strong>
+                                publicações
+                            </span>
+                                <span>
+                                    <strong>
+                                        2.113
+                                </strong>
+                                seguidores
+                            </span>
+                                <span>
+                                    <strong>
+                                        536
+                                </strong>
+                                seguindo
+                            </span>
+                            </div>
+                            <div className="perfil-baixo">
+                                <strong>
+                                    Framework
+                            </strong>
+                            Construindo o futuro juntos.
+                            <a href="https://linktr.ee/frameworksystem">linktr.ee/frameworksystem</a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div className="histories">
+                        <div className="histories-photo">
+                            <div>
+                                <div>
+                                    <FiSmile />
+                                </div>
+                                <span>
+                                    Home office
+                            </span>
+                            </div>
+                        </div>
+                        <div className="histories-photo">
+                            <div>
+                                <div>
+                                    <FiWind />
+                                </div>
+                                <span>
+                                    House office
+                            </span>
+                            </div>
+                        </div>
+                        <div className="histories-photo">
+                            <div>
+                                <div>
+                                    <FiSlack />
+                                </div>
+                                <span>
+                                    Hotel office
+                            </span>
+                            </div>
+                        </div>
+
+                    </div>
+
+
+
+                    <ul className="album-grid">
+                        {photos.map(photo => (
+                            <li key={photo.id}>
+                                <img className="imagem" src={photo.url} alt={photo.title}></img>
+                            </li>
+                        ))}
+                    </ul>
+
+                </div>
             </div>
 
         )
