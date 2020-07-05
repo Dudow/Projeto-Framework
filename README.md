@@ -1,6 +1,6 @@
 # framestagio
 
-## 1 - Iniciar
+## Iniciar
 
 _Baixar/Clonar o projeto.
 
