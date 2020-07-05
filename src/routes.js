@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from 'react'
 import { Route, BrowserRouter } from 'react-router-dom'
 
-import Load from './components/loading'
+import Load from './components/Loadings/Loading/loading'
 const Home = lazy(() => import('./pages/Home'))
 const Posts = lazy(() => import('./pages/Posts'))
 const Albuns = lazy(() => import('./pages/Albuns'))

@@ -1,46 +1,35 @@
 import React, { Component } from 'react'
-import api from '../../services/api'
 import { Link } from 'react-router-dom'
 import { FiArrowLeft } from 'react-icons/fi'
 
-import logo from '../../assets/logo.png'
+import logo from '../../assets/Trecco.png'
+import Lista from '../../components/Todo/Todo/todo'
+import ListaCompleted from '../../components/Todo/TodoCompleted/todoCompleted'
+import NewLista from '../../components/Todo/NewTodo/newTodo'
 
 import './todo.css'
 
 class Todo extends Component {
-    state = {
-        completed: []
-    }
-
-    async componentDidMount() {
-        const res = await api.get('todos?completed=true')
-        this.setState({ completed: res.data })
-    }
-
     render() {
-
-        const { completed } = this.state
-
+        
         return (
             <div className="container-todo">
-                <div id="pagetodo">
+                <div>
                     <header>
                         <Link to="/">
                             <FiArrowLeft />
-                            <img src={logo} alt="Logo" className="logo" />
+                            <img src={logo} alt="Logo-todo" className="logo-todo" />
                         </Link>
                     </header>
 
-                    <h1 className="Pagetitle">To-do</h1>
+                    <h1 className="Pagetitle-todo">To-do</h1>
 
-                    <ul className="album-grid">
+                    <div className="todo-container">
+                            <Lista />
+                            <ListaCompleted />
+                            <NewLista />
+                    </div>
 
-                        {completed.map(todo => (
-                            <li key={todo.id}>
-                                {todo.title}
-                            </li>
-                        ))}
-                    </ul>
                 </div>
             </div>
 

@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import ReactDOM from 'react-dom';
 
-import Load from './components/loading'
+import Load from './components/Loadings/Loading/loading'
 const App = lazy(() => import('./App'))
 
 ReactDOM.render(

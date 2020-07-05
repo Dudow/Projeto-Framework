@@ -2,6 +2,7 @@
     width: 100%;
     height: 100%;
     background: #15202b;
+    min-height: 100vh;
 }
 
 #pagePosts {
@@ -9,6 +10,7 @@
     max-width: 1100px;
     margin: 0 auto;
     padding-top: 48px;
+    padding-bottom: 48px;
 }
 
 #pagePosts header {
@@ -37,7 +39,6 @@
     display: grid;
     grid-template-columns: 1fr;
     gap: 0px;
-    list-style: none;
     margin-left: auto;
     margin-right: auto;
 }
@@ -91,8 +92,9 @@
     font-weight: 400;
 }
 
-.Pagetitle{
+.Pagetitle-post{
     margin: 20px 0 10px 0;
+    color: #007ac5;
 }
 
 .fake-photo{
@@ -137,7 +139,7 @@
 .search{
     background: transparent;
     margin-top: 80px;
-    padding: 10px 20px 0px 20px;
+    padding: 10px 0 0 0;
     border-radius: 20px 20px 0 0;
     display: flex;
     flex-direction: column;
@@ -162,6 +164,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 20px 0 20px;
 }
 
 .cima span{
@@ -181,6 +184,7 @@
 
 .baixo{
     color: #8393a1;
+    width: 600px;
     display: flex;
     align-items: center;
 }
@@ -193,26 +197,29 @@
     justify-content: center;
 }
 
-.baixo span + span{
-    width: 25%;
-}
-
-.baixo span + span + span{
-    width: 15%;
-}
-
-.baixo span + span + span + span{
-    width: 15%;
-}
-
-.principais:hover,
-.recentes:hover,
-.pessoas:hover,
-.fotos:hover,
-.videos:hover{
+.baixo span:first-child{
     color: #1da1f2;
     border-bottom: #1da1f2 solid 3px;
     cursor: pointer;
+}
+
+.baixo span:nth-child(2){
+    width: 30%;
+}
+
+.baixo span:nth-child(3){
+    width: 15%;
+}
+
+.baixo span:nth-child(4){
+    width: 15%;
+}
+
+.baixo span:hover{
+    color: #1da1f2;
+    cursor: pointer;
+    background-color: #1da0f234;
+    border-bottom: #1da0f234 solid 3px;
 }
 
 .search-input{
@@ -223,6 +230,7 @@
     padding: 8px 16px;
     border: 1px solid #253341;
     color: #f0f0f0;
+    font-size: 16px;
 }
 
 @media(max-width: 1240px) {

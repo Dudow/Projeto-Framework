@@ -1,57 +1,148 @@
-#pagePosts {
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
+header a{
+    display: flex;
+    align-items: center;
 }
 
-#pagePosts header {
-    margin-top: 48px;
+.container-todo{
+    background-color: #4bbf6b;
+    min-height: 100vh;
+    color: gray;
+    padding: 30px;
+}
+
+.container-todo div header a{
+    width: 200px;
+    font-size: 25px;
+    color: #ceead6;
+}
+
+.todo-icon{
     display: flex;
     flex-direction: column;
 }
 
-#pagePosts header a {
-    color: var(--title-color);
-    font-weight: bold;
-    text-decoration: none;
+.todo-icon:hover{
+    background: #e9e9e9;
+}
+
+.todo-icon:hover > .check-name svg{
+    display: inherit;
+}
+
+.todo-icon:hover > .check-name{
+    margin-right: 0;
+}
+
+.check-name{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 30px;
+}
+
+.check-name svg{
+    display: none;
+}
+
+.todo-icon span + span{
     display: flex;
     align-items: center;
-    width: 260px;
+    padding: 1px;
+    font-size: 13px;
+    margin-top: 2px;
 }
 
-#pagePosts header a svg {
-    margin-right: 16px;
-    color: black;
-    font-size: 25px;
+.check-menu{
+    width: 60px;
+    height: 24px;
+    padding: 3px;
 }
 
-.items-grid {
-    max-width: 600px;
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 0px;
-    list-style: none;
-    margin-left: auto;
-    margin-right: auto;
+.todo-done .todo-icon span + span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    background-color: #61bd4f;
+    color: #f0f0f0;
+    font-size: 14px;
+    padding-left: 3px;
 }
 
-.items-grid li {
-    background: transparent;
-    height: auto;
-    padding: 10px 15px 1px;
+.todo-icon span span{
+    height: 13px;
+    margin-right: 3px;
+    margin-left: 3px;
+}
+
+.todo-container{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    text-align: left;
-    border: 1px solid #dadada9d;
-    max-height: 200px;
+    justify-content: flex-start;
+    padding: 20px;
 }
 
-.items-grid li span {
+.todo-todo{
+    background-color: #ebecf0;
+    border-radius: 4px;
+    padding: 15px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.todo-done{
+    background-color: #ebecf0;
+    border-radius: 4px;
+    padding: 15px;
+    margin-right: 10px;
+    height: 100%;
+    cursor: pointer;
+}
+
+.todo-todo div{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding: 0 5px 0 5px;
+}
+
+.todo-done div{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    padding: 0 5px 0 5px;
+}
+
+.todo-todo li, .todo-done li{
+    width: 100%;
+    background-color: #ffffff;
+    box-shadow: 0 1px 2px 1px #00000033;
+    margin-bottom: 9px;
+    border-radius: 3px;
+    padding: 7px;
+}
+
+.new-todo{
+    background: #76ce8e;
+    height: 38px;
+    width: 260px;
+    border-radius: 4px;
+    padding: 5px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+}
+
+.new-todo:hover{
+    background: #8bd39e;
+}
+
+.new-todo span{
     display: flex;
     align-items: center;
-    margin-bottom: 5px;
-    text-align: left;
+    color: white;
+    font-size: 15px;
 }
 
 .post-title{
@@ -59,175 +150,22 @@
     text-transform: capitalize;
 }
 
-.post-user{
-    width: 300px;
-    margin-bottom: 0px;
-    cursor: pointer;
-}
-
-.post-user span{
-
-    margin-right: 8px;
-    color:#f3f4f4;
-    font-weight: 600;
-    letter-spacing: 0.4px;
-}
-
-.post-user span + span{
-    color:#7e8e9b;
-    font-weight: 400;
-}
-
-.Pagetitle{
+.Pagetitle-todo{
+    color: #ceead6;
     margin: 20px 0 10px 0;
 }
 
-.fake-photo{
-    background: linear-gradient(13deg, #e66465, #9198e5);
-    color: blanchedalmond;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
-    margin-right: 5px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-
-.space-photo{
-    flex-basis: 49px;
-    width: 42px;
-    height: 180px;
-}
-
-.post-area{
-    margin-left: 10px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    color: #ffffff;
-}
-
-.tt-Icons{
-    height: 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-right: 100px;
-}
-
-.tt-Icons span{
-    cursor: pointer;
-}
-
-.search{
-    background: transparent;
-    margin-top: 80px;
-    padding: 10px 20px 0px 20px;
-    border-radius: 20px 20px 0 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: left;
-    border: 1px solid #dadada9d;
-    max-width: 600px;
-    height: 108px;
-    margin-left: auto;
-    margin-right: auto;
-    color: #1da1f2;
-}
-
-.cima, .baixo{
-    display: flex;
-    justify-content: space-between;
-    height: 50%;
-}
-
-.cima{
-    height: 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.cima span{
-    font-size: 23px;
-    height: 23px;
-    cursor: pointer;
-}
-
-.lupa{
-    height: 35px;
-    background: #253341;
-    border-radius: 20px 20px 20px 20px;
-    padding-left: 15px;
-    display: flex;
-    align-items: center;
-}
-
-.baixo{
-    color: #8393a1;
-    display: flex;
-    align-items: center;
-}
-
-.baixo span{
-    height: 50px;
-    padding:15px 0 15px 0;
-    width: 20%;
-    display: flex;
-    justify-content: center;
-}
-
-.baixo span + span{
-    width: 25%;
-}
-
-.baixo span + span + span{
-    width: 15%;
-}
-
-.baixo span + span + span + span{
-    width: 15%;
-}
-
-.principais:hover,
-.recentes:hover,
-.pessoas:hover,
-.fotos:hover,
-.videos:hover{
-    color: #1da1f2;
-    border-bottom: #1da1f2 solid 3px;
-    cursor: pointer;
-}
-
-.search-input{
-    background: #253341;
-    border-radius: 0 20px 20px 0;
-    width: 400px;
-    height: 35px;
-    padding: 8px 16px;
-    border: 1px solid #253341;
-    color: #f0f0f0;
-}
-
-.logo{
-    height: 35px;
+.logo-todo{
     position: relative;
+    width: 150px;
+    margin-left: 25px;
 }
 
-@media(max-width: 1240px) {
-    #pagePosts header {
-        margin-left: 8px;
+@media(max-width: 1550px) {
+    .container-todo{
+        width: 1700px;
     }
-}
-
-@media(max-width: 600px) {
-    .items-grid li {
-        max-height: 220px;
-    }
-    .Pagetitle{
-        margin: 0 2px 0 0;
+    .todo-container{
+        width: 1600px;
     }
 }

@@ -1,24 +1,17 @@
 import React, { Component } from 'react'
-import api from '../../services/api'
 import { Link } from 'react-router-dom'
 import { FiArrowLeft, FiUser, FiSmile, FiWind, FiSlack } from 'react-icons/fi'
+import { GrGrid } from "react-icons/gr";
+import { BsPersonSquare } from "react-icons/bs";
 
 import './albuns.css'
-import logo from '../../assets/logo.png'
+import logo from '../../assets/Tiltagram.png'
+import igtv from '../../assets/IGTV-512.webp'
+import Lista from '../../components/Album/ListAlbums/listAlbuns'
 
 class Albums extends Component {
-    state = {
-        photos: []
-    }
-
-    async componentDidMount() {
-        const res = await api.get('photos')
-        this.setState({ photos: res.data })
-    }
 
     render() {
-
-        const { photos } = this.state
 
         return (
             <div className="container">
@@ -28,10 +21,10 @@ class Albums extends Component {
                     <header>
                         <Link to="/">
                             <FiArrowLeft />
-                            <img src={logo} alt="Logo" className="logo" />
+                            <img src={logo} alt="Logo" className="logo-album" />
                         </Link>
 
-                        <h1 className="Pagetitle">Albuns</h1>
+                        <h1 className="Pagetitle-albums">Albuns</h1>
                     </header>
 
                     <div className="perfil">
@@ -107,15 +100,14 @@ class Albums extends Component {
 
                     </div>
 
-
-
-                    <ul className="album-grid">
-                        {photos.map(photo => (
-                            <li key={photo.id}>
-                                <img className="imagem" src={photo.url} alt={photo.title}></img>
-                            </li>
-                        ))}
-                    </ul>
+                    <div className="album-container">
+                        <div className="album-menu">
+                            <div><GrGrid/><span>PUBLICAÇÕES</span></div>
+                            <div><img src={igtv} alt="Igtv-icon" className="igtv-icon"/><span>IGTV</span></div>
+                            <div><BsPersonSquare/><span>MARCADOS</span></div>
+                        </div>
+                        <Lista/>
+                    </div>
 
                 </div>
             </div>
