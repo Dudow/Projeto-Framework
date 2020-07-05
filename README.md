@@ -25,9 +25,9 @@ Imitação do Trello (https://trello.com/pt-BR)
 ##### _React router Dom
 ##### _React icons
 
-### - Code splitting
+### - Code splitting (mais fácil de ver em conexão 3G)
 
-### - Infinite Scroll
+### - Infinite Scroll (mais fácil de ver em conexão 3G)
 
 ### - GitHub
 
