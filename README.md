@@ -21,13 +21,13 @@ Imitação do Instagram (https://www.instagram.com/frameworksystem/)
 Imitação do Trello (https://trello.com/pt-BR)
 
 ## Features
-### React
-#### React router Dom
-#### React icons
+### -React
+##### _React router Dom
+##### _React icons
 
-### Code splitting
+### -Code splitting
 
-### Infinite Scroll
+### -Infinite Scroll
 
-### GitHub
+### -GitHub
 
