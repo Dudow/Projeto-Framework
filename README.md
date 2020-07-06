@@ -1,6 +1,6 @@
 # framestagio
 
-## 1 - Iniciar
+## Iniciar
 
 _Baixar/Clonar o projeto.
 
@@ -21,13 +21,13 @@ Imitação do Instagram (https://www.instagram.com/frameworksystem/)
 Imitação do Trello (https://trello.com/pt-BR)
 
 ## Features
-### -React
+### - React
 ##### _React router Dom
 ##### _React icons
 
-### -Code splitting
+### - Code splitting (mais fácil de ver em conexão 3G)
 
-### -Infinite Scroll
+### - Infinite Scroll (mais fácil de ver em conexão 3G)
 
-### -GitHub
+### - GitHub
 
